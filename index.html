@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon_black.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abel&family=Lato:wght@300&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://kit.fontawesome.com/0117602aa2.js" crossorigin="anonymous"></script>
+    <title>Hace Tu Parte!</title>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html"><img id="logo" src="assets/img/logo2_transp.PNG" alt="Logo Hace Tu Parte" class="animate__animated animate__backInLeft"></a>
+        <nav id="nav" class="main-nav">
+            <div class="nav-links">
+                <a class="link-item" href="tusideas.html">Tus Ideas</a>
+                <a class="link-item" href="acerca.html">Acerca Nuestro</a>
+                <a class="link-login" href="registro.html">Ingres&aacute;</a>
+            </div>
+
+        </nav>
+        <button id="button-menu" class="button-menu">
+            <span><strong>&#9776;</strong></span>
+            <span><strong>X</strong></span>
+        </button>
+        <script src="assets/js/menu.js"></script>
+    </header>
+
+    <main class="principal">
+
+        <section id="slider" class="carrusel-contenido">
+            <div id="carrusel-caja">
+                <div class="carrusel-elemento">
+                    <div><h2>Una nueva manera de participar y ayudar a construir un mejor lugar.</h2>
+                    <strong>Hac&eacute; tu parte!</strong> es una plataforma p&uacute;blica donde pod&eacute;s colaborar para identificar problemas y/o sugerir soluciones. Además a través de tu voto pod&eacute;s decidir que problemas son m&aacute;s urgentes y cual soluci&oacute;n te parece m&aacute;s adecuada.
+                    <a href="acerca.html">Conoc&eacute; m&aacute;s <i class="fa-solid fa-arrow-right fa-beat fa-xl" style="color: #e9dac1;"></i></a></div>
+                    <div><img class="imagenes" src="assets/img/sumate-img.png" alt="Gr&aacute;fico gen&eacute;rico de gente participando de la plataforma"></div>
+                </div>
+                <div class="carrusel-elemento">
+                    <div><h2>Una nueva manera de participar y ayudar a construir un mejor lugar.</h2>
+                    <strong>Hac&eacute; tu parte!</strong> es una plataforma p&uacute;blica donde pod&eacute;s colaborar para identificar problemas y/o sugerir soluciones. Además a través de tu voto pod&eacute;s decidir que problemas son m&aacute;s urgentes y cual soluci&oacute;n te parece m&aacute;s adecuada.
+                    <a href="acerca.html">Conoc&eacute; m&aacute;s <i class="fa-solid fa-arrow-right fa-beat fa-xl" style="color: #e9dac1;"></i></a></div>
+                    <div><img class="imagenes" src="assets/img/sumate-img.png" alt="Gr&aacute;fico gen&eacute;rico de gente participando de la plataforma"></div>
+                </div>
+                <div class="carrusel-elemento">
+                    <div><h2>Una nueva manera de participar y ayudar a construir un mejor lugar.</h2>
+                    <strong>Hac&eacute; tu parte!</strong> es una plataforma p&uacute;blica donde pod&eacute;s colaborar para identificar problemas y/o sugerir soluciones. Además a través de tu voto pod&eacute;s decidir que problemas son m&aacute;s urgentes y cual soluci&oacute;n te parece m&aacute;s adecuada.
+                    <a href="acerca.html">Conoc&eacute; m&aacute;s <i class="fa-solid fa-arrow-right fa-beat fa-xl" style="color: #e9dac1;"></i></a></div>
+                    <div><img class="imagenes" src="assets/img/sumate-img.png" alt="Gr&aacute;fico gen&eacute;rico de gente participando de la plataforma"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tendencias">
+            <div><a href="#" class="links-footer">Más Votados</a></div>
+            <div><a href="#" class="links-footer">Cerca Tuyo</a></div>
+            <div class="searchbox"><label for="busqueda">Buscar:</label>
+                <input type="search" id="busqueda" name="busqueda" ></div>
+        </section>
+        
+        <section class="contenido">
+                    <div>
+                        <div class="main-content">
+                            <div v-for="objeto in objetosFiltrados" :key="objeto.id">
+                                <h3 class="titulo">{{ objeto.title }}</h3>
+                                <div class="post">{{ objeto.body }}</div>
+                            </div>
+                            <button v-if="mostrarSiguiente" @click="siguiente">Siguiente</button>
+                        </div>
+                    </div>
+        </section>
+        
+        <section class="filtro">
+            <a href="#" class="tag">Bs. As.</a>
+            <a href="#" class="tag">C&oacute;rdoba</a>
+            <a href="#" class="tag">Mendoza</a>
+            <a href="#" class="tag">Santa Fe</a>
+            <a href="#" class="tag">Bs. As. Prov.</a>
+            <a href="#" class="tag">Salta</a>
+            <a href="#" class="tag">Jujuy</a>
+            <a href="#" class="tag">Tucum&aacute;n</a>
+            <a href="#" class="tag">Misiones</a>
+            <a href="#" class="tag">Entre R&iacute;os</a>
+            <a href="#" class="tag">La Pampa</a>
+            <a href="#" class="tag">R&iacute;o Negro</a>
+            <a href="#" class="tag">Santa Cruz</a>
+            <a href="#" class="tag">Neuqu&eacute;n</a>
+            <a href="#" class="tag">La Rioja</a>
+            <a href="#" class="tag">San Ju&aacute;n</a>
+            <a href="#" class="tag">San Luis</a>
+            <a href="#" class="tag">Tierra Del Fuego</a>
+        </section>
+    </main>
+
+    <footer>
+        <section class="pie">
+            <div class="pie-links">
+                <div><a href="colabora.html" class="links-footer">Colabor&aacute;</a> 
+                </div>
+                <div><a href="#" class="links-footer">Comunidad</a> 
+                </div>
+                <div><a href="#" class="links-footer">Ayuda</a> 
+                </div>
+            </div>
+            <div class="pie-redes">
+                <div>
+                <a href="#"><i class="fa-brands fa-facebook" style="color: #54bab9;"></i></a>
+                </div>
+                <div>
+                <a href="#"><i class="fa-brands fa-instagram" style="color: #54bab9;"></i></a>
+                </div>
+            <div>
+                <a href="#"><i class="fa-brands fa-twitter" style="color: #54bab9;"></i></a>
+                </div>
+            </div>
+        </section>
+        <div class="copyright">Derechos reservados ©2023</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '.contenido',
+            data: {
+                objetos: [], // Todos los objetos obtenidos del API
+                objetosFiltrados: [], // Objetos a mostrar en cada página
+                pagina: 0, // Número de página actual
+                elementosPorPagina: 3, // Cantidad de objetos por página
+            },
+            computed: {
+                mostrarSiguiente() {
+                    return this.pagina < Math.ceil(this.objetos.length / this.elementosPorPagina) - 1;
+                }
+            },
+            mounted() {
+                fetch('https://jsonplaceholder.typicode.com/posts')
+                    .then(response => response.json())
+                    .then(data => {
+                        this.objetos = data;
+                        this.mostrarObjetosPagina(0);
+                    })
+                    .catch(error => {
+                        console.error('Error al obtener los objetos:', error);
+                    });
+            },
+            methods: {
+                siguiente() {
+                    this.pagina++;
+                    this.mostrarObjetosPagina(this.pagina);
+                },
+                mostrarObjetosPagina(pagina) {
+                    const inicio = pagina * this.elementosPorPagina;
+                    const fin = inicio + this.elementosPorPagina;
+                    this.objetosFiltrados = this.objetos.slice(inicio, fin);
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
