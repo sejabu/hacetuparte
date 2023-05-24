@@ -1,0 +1,473 @@
+:root {
+    --tipo-1: 'Abel', 'Lato', sans-serif;
+    --tipo-2: 'Quicksand', 'Lato', sans-serif;
+
+    --negro: #393939;
+
+    --bk-color: rgb(84, 186, 185);
+    /* --bk-color: rgb(37, 160, 84); */
+    /* --bk-color: rgb(222, 101, 55); */
+    /* --bk-color: rgb(76, 76, 76); */
+
+    --bk-color2: rgb(233, 218, 193);
+    --bkg-color: rgb(247, 236, 222);
+
+    --txt-color: rgb(251, 248, 241);
+    --txt-color2: #222831;
+
+    --mainborder: 1em;
+
+    font-size: 16px;
+}
+
+/* MODO OSCURO EN DESARROLLO */
+/* @media (prefers-color-scheme: dark) {
+    :root {
+    --negro: #393939;
+    
+    --bk-color: rgb(84, 186, 185);
+    --bk-color2: rgb(233, 218, 193);
+    --bkg-color: rgb(247, 236, 222);
+    
+    --txt-color: rgb(251, 248, 241);
+    --txt-color2: #222831;
+    }
+  } */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background-color: var(--bkg-color);
+    font-family: var(--tipo-1);
+}
+
+div{
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: var(--bk-color);
+    color: var(--txt-color);
+    height: 5rem;
+    border-radius: var(--mainborder);
+    margin: 10px;
+}
+
+#logo {
+    z-index: 50;
+}
+
+/* COMIENZA EL ESTILO DEL MENU DE LINKS */
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100vw;
+    margin-right: -100%;
+    transition: all 0.2s linear;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.main-nav.show {
+    margin-right: 0;
+}
+
+.nav-links {
+    background-color: rgba(34, 40, 49, 0.7);
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.link-item {
+    margin: 1rem;
+    padding: .5rem .75rem;
+    color: var(--txt-color);
+    border-radius: 1em;
+    text-decoration: none;
+
+}
+
+.link-item:hover {
+    background-color: var(--bk-color2);
+    color: var(--bk-color);
+}
+
+.link-login {
+    margin: 1rem;
+    padding: .5rem .75rem;
+    color: var(--txt-color);
+    border: var(--txt-color) solid 1px;
+    border-radius: 1em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-login:hover {
+    background-color: var(--bk-color2);
+    font-weight: bold;
+    color: var(--bk-color);
+    border: var(--bk-color2) solid 1px;
+}
+
+.button-menu {
+    z-index: 200;
+    padding: .5rem;
+    border: none;
+    display: inline;
+    background: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--txt-color);
+}
+
+
+.button-menu span:nth-child(2) {
+    display: none;
+}
+
+
+.button-menu.close span:nth-child(1) {
+    display: none;
+}
+
+.button-menu.close span:nth-child(2) {
+    display: inline;
+}
+
+@media screen and (min-width: 768px) {
+    .button-menu {
+        display: none;
+    }
+
+    .main-nav {
+        position: relative;
+        top: auto;
+        height: auto;
+        width: auto;
+        margin-right: 0;
+        transition: none;
+        background-color: transparent;
+    }
+
+    .nav-links {
+        background-color: transparent;
+        display: block;
+        width: auto;
+        height: auto;
+    }
+
+}
+
+/* FINALIZA EL ESTILO DEL MENU DE LINKS */
+/* COMIENZA EL SLIDER */
+
+.carrusel-contenido {
+    margin: 0 10px;
+    overflow: hidden;
+    text-align: left;
+    background-color: rgb(251, 248, 241);
+    border-radius: var(--mainborder);
+}
+
+#carrusel-caja {
+    animation: slider 20s infinite linear;
+    transition: all 1s ease;
+    width: 300%;
+}
+
+.imagenes {
+    width: 50%;
+}
+
+.carrusel-elemento {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    float: left;
+    width: 33.333%;
+}
+
+.carrusel-elemento div {
+    width: 50%;
+    text-align: center;
+    padding: 0 2rem;
+    font-size: .9rem;
+}
+
+.carrusel-elemento div h2 {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    margin: 1rem;
+}
+
+.carrusel-elemento a {
+    text-decoration: none;
+    font-family: inherit;
+    background-color: var(--bk-color);
+    border-radius: var(--mainborder);
+    padding: 0 .5rem;
+    margin: .5rem;
+}
+
+@keyframes slider {
+    0% {
+        margin-left: 0;}
+
+    30% {
+        margin-left: 0;}
+
+    35% {
+        margin-left: -100%;}
+
+    65% {
+        margin-left: -100%;}
+
+    70% {
+        margin-left: -200%;}
+
+    95% {
+        margin-left: -200%;}
+
+    100% {
+        margin-left: 0;}
+}
+/* FINALIZA EL SLIDER */
+
+.principal {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+        's   s'
+        't   t'
+        'c   f'
+    ;
+}
+
+#slider {
+    grid-area: s;
+}
+
+.tendencias {
+    grid-area: t;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--bk-color2);
+    color: var(--txt-color);
+    border-radius: var(--mainborder);
+    margin: 10px;
+}
+
+.tendencias div {
+    margin: 10px;
+    padding: .25rem 1rem;
+    font-weight: 500;
+}
+
+.searchbox {
+    border-radius: var(--mainborder);
+    border-radius: var(--mainborder);
+    background-color: white;
+    color: var(--bk-color);
+}
+
+.searchbox input{
+    background-color: white;
+}
+
+.contenido {
+    grid-area: c;
+    margin: 10px;
+    border-radius: var(--mainborder);
+    background-color: var(--bk-color2);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content div {
+    margin: .5rem;
+    background-color: white;
+    border-radius: var(--mainborder);
+    padding: 1rem;
+}
+
+.main-content button{
+    font-family: inherit;
+    cursor: pointer;
+    background-color: var(--bk-color);
+    border-radius: var(--mainborder);
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.titulo {
+    font-size: 1.25rem;
+    margin: 0px;
+    font-weight: bold;
+    line-height: 1.2;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    color: inherit;
+    cursor: pointer;
+}
+
+.post::after {
+    content: "... Más información";
+}
+
+.thumbnail {
+    width: 8rem;
+}
+
+.filtro {
+    grid-area: f;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.filtro a:hover {
+    color: var(--txt-color);
+    background-color: black;
+}
+
+.tag {
+    margin: 5px;
+    width: 5rem;
+    text-align: center;
+    font-family: var(--tipo-2);
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: var(--txt-color2);
+    padding: 0.25em;
+    border: 1px solid var(--negro);
+    border-radius: 0.65em;
+    background-color: white;
+    /* display: block; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.pie {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10px 0;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 0;
+    background-color: var(--bk-color2);
+    border-radius: var(--mainborder);
+}
+
+.pie-links {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+.links-footer {
+    text-decoration: none;
+    background-color: white;
+    border-radius: var(--mainborder);
+    padding: 0rem 1rem;
+    color: black;
+}
+
+.links-footer:hover {
+    background-color: var(--bk-color);
+    color: white;
+}
+
+.pie-redes {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    /* padding: 0rem 1rem; */
+}
+
+.pie-redes div{
+    padding: 0rem 1rem;
+}
+
+.copyright {
+    border-top: 1px var(--color-2) solid;
+    margin-left: 20px;
+    size: 0.5rem;
+}
+
+@media (max-width:800px) {
+    .principal {
+        grid-template-areas:
+            't   t'   
+            'c   f'
+            
+        ;
+    }
+
+    #slider {
+        display: none;
+    }
+}
+
+@media (max-width:600px) {
+    #logo {
+        width: 250px;
+    }
+    
+    .principal {
+        grid-template-areas:
+            't   t'    
+            'c   c'
+        ;
+    }
+
+    #slider {
+        display: none;
+    }
+
+    .filtro {
+        display: none;
+    }
+    .pie div {
+        margin-bottom: 10px;
+    }
+}
+
+form {
+    border: 1px solid grey;
+    width: 50%;
+    transform: translate(50%); /* Muevo el formulario a la mitad de la pagina (Horizontal) */
+    border-radius: 10px;
+    margin: 2rem;
+}
